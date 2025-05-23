@@ -1,9 +1,10 @@
-import { render } from "./render";
-import { ComponentTree } from "./types";
+import { ComponentTree } from "./src/types";
+import { render } from "./src/render";
 
 const app = (): ComponentTree => ({
   type: "div",
   children: ["root div"],
 });
 
-render(app());
+const tree = app()
+render(tree);
