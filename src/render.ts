@@ -1,5 +1,5 @@
+import { hookIndexRef } from "./hooks";
 import { ComponentTree } from "./types";
-export const hookIndexRef = { value: 0 };
 
 export function render(root: ComponentTree) {
   // TODO: virtual dom, diffing

@@ -1,6 +1,6 @@
 import { ComponentTree } from "./src/types";
 import { render } from "./src/render";
-import { useState } from "./src/useState";
+import { useState } from "./src/hooks";
 
 const counter = (): ComponentTree => {
   const [count, setCount] = useState(1);
@@ -50,5 +50,6 @@ const app = (): ComponentTree => {
 render(app());
 
 export function rerender() {
+  console.log("rerender");
   render(app());
 }

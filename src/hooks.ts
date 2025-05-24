@@ -1,5 +1,6 @@
 import { rerender } from "..";
-import { hookIndexRef } from "./render";
+
+export const hookIndexRef = { value: 0 };
 
 const vals = [];
 
