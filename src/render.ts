@@ -19,5 +19,12 @@ function createNode(node: ComponentTree | string) {
   for (const child of node.children) {
     element.appendChild(createNode(child));
   }
+  if (node.style) {
+    for (const [k, v] of Object.entries(node.style)) {
+      node.style[k] = v;
+    }
+  }
+  console.log('node.style', node.style)
+
   return element;
 }
