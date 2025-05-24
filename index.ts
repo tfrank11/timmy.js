@@ -50,6 +50,5 @@ const app = (): ComponentTree => {
 render(app());
 
 export function rerender() {
-  console.log("rerender");
   render(app());
 }
