@@ -1,1 +1,12 @@
-# timmy.js
+# Timmy.js
+
+Timmy.js is a declarative frontend framework generally based on React.
+
+## 📝 FAQ
+
+### Why does this exist?
+
+I thought it would be funny
+
+### Why is there application code inside index.ts?
+Because it's my repo and I can do whatever I want. 
