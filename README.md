@@ -10,3 +10,6 @@ I thought it would be funny
 
 ### Why is there application code inside index.ts?
 Because it's my repo and I can do whatever I want. 
+
+### Why does pnpm serve call a python module?
+See previous answer.
