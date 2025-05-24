@@ -20,11 +20,8 @@ function createNode(node: ComponentTree | string) {
     element.appendChild(createNode(child));
   }
   if (node.style) {
-    for (const [k, v] of Object.entries(node.style)) {
-      node.style[k] = v;
-    }
+    element.setAttribute("style", node.style);
   }
-  console.log('node.style', node.style)
 
   return element;
 }

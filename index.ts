@@ -1,42 +1,29 @@
 import { ComponentTree } from "./src/types";
 import { render } from "./src/render";
 
-const app = (): ComponentTree => ({
-  type: "div",
-  style: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  children: [
-    {
-      type: "div",
-      style: {
-        border: '1px solid green',
+const app = (): ComponentTree => {
+  return {
+    type: "div",
+    style: "display: flex; flex-direction: column;",
+    children: [
+      {
+        type: "div",
+        style: "border: 1px solid green;",
+        children: ["1"],
       },
-      children: [
-        '1'
-      ]
-    },
-    {
-      type: "div",
-      style: {
-        border: '1px solid red',
+      {
+        type: "div",
+        style: "border: 1px solid red;",
+        children: ["2"],
       },
-      children: [
-        '2'
-      ]
-    },
-    {
-      type: "div",
-      style: {
-        border: '1px solid blue',
+      {
+        type: "div",
+        style: "border: 1px solid blue;",
+        children: ["3"],
       },
-      children: [
-        '3'
-      ]
-    }
-  ],
-});
+    ],
+  };
+};
 
-const tree = app()
+const tree = app();
 render(tree);

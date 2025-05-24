@@ -2,6 +2,6 @@ type HtmlElementName = keyof HTMLElementTagNameMap;
 
 export type ComponentTree = {
   type: HtmlElementName;
-  style?: Partial<CSSStyleDeclaration>;
+  style?: string;
   children?: (ComponentTree | string)[];
 };
