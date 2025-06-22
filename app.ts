@@ -1,4 +1,4 @@
-import { useState } from "./src/hooks";
+import { useCallback, useState } from "./src/hooks";
 import { ComponentTree } from "./src/types";
 
 interface CounterProps {
@@ -7,6 +7,14 @@ interface CounterProps {
 
 const counter = ({ borderColor }: CounterProps): ComponentTree => {
   const [count, setCount] = useState(1);
+
+  const onClickIncrement = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  const onClickDecrement = useCallback(() => {
+    setCount(count - 1);
+  }, [count]);
 
   return {
     type: "div",
@@ -23,16 +31,12 @@ const counter = ({ borderColor }: CounterProps): ComponentTree => {
           {
             type: "button",
             text: "decrement",
-            onClick: () => {
-              setCount(count - 1);
-            },
+            onClick: onClickDecrement,
           },
           {
             type: "button",
             text: "increment",
-            onClick: () => {
-              setCount(count + 1);
-            },
+            onClick: onClickIncrement,
           },
         ],
       },

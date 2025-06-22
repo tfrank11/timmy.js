@@ -7,3 +7,8 @@ export type ComponentTree = {
   text?: string;
   onClick?: (evt: MouseEvent) => void;
 };
+
+export type ICallbackArgs = {
+  fn: (v: unknown) => unknown;
+  deps?: unknown[];
+};
