@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node index.ts",
-    "build": "rm -rf /dist && pnpm tsc -p ./tsconfig.json && pnpm tsc-alias",
-    "serve": "python3 -m http.server"
+    "build": "rm -rf /dist && pnpm tsc -p ./tsconfig.json && pnpm tsc-alias"
   },
   "keywords": [],
   "author": "",

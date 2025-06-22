@@ -1,7 +1,11 @@
 import { useState } from "./src/hooks";
 import { ComponentTree } from "./src/types";
 
-const counter = (): ComponentTree => {
+interface CounterProps {
+  borderColor: string;
+}
+
+const counter = ({ borderColor }: CounterProps): ComponentTree => {
   const [count, setCount] = useState(1);
 
   return {
@@ -9,8 +13,8 @@ const counter = (): ComponentTree => {
     children: [
       {
         type: "div",
-        style: "border: 1px solid green;",
-        children: [`Count: ${count.toString()}`],
+        style: `border: 2px solid ${borderColor};`,
+        text: `Count: ${count.toString()}`,
       },
       {
         type: "div",
@@ -18,14 +22,14 @@ const counter = (): ComponentTree => {
         children: [
           {
             type: "button",
-            children: ["decrement"],
+            text: "decrement",
             onClick: () => {
               setCount(count - 1);
             },
           },
           {
             type: "button",
-            children: ["increment"],
+            text: "increment",
             onClick: () => {
               setCount(count + 1);
             },
@@ -37,12 +41,18 @@ const counter = (): ComponentTree => {
 };
 
 const app = (): ComponentTree => {
-  console.log("app called");
-
   return {
     type: "div",
     style: "display: flex; flex-direction: column;",
-    children: [counter(), counter(), counter()],
+    children: [
+      {
+        type: "h1",
+        text: "Yo yo yo check out these buttons",
+      },
+      counter({ borderColor: "red" }),
+      counter({ borderColor: "green" }),
+      counter({ borderColor: "blue" }),
+    ],
   };
 };
 

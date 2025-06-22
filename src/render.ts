@@ -1,23 +1,66 @@
 import { hookIndexRef } from "./hooks";
 import { ComponentTree } from "./types";
+import { isTreeEqualShallow } from "./utils";
 
-export function render(root: ComponentTree) {
-  // TODO: virtual dom, diffing
-  hookIndexRef.value = 0;
-  updateDom(root);
-}
+let prevTree: ComponentTree | null = null;
 
-function updateDom(tree: ComponentTree) {
+export function render(newTree: ComponentTree) {
   const root = document.getElementById("root");
-  root.innerHTML = "";
-  root.appendChild(createNode(tree));
+  if (!root) {
+    throw new Error("no root element found");
+  }
+  hookIndexRef.value = 0;
+  diffAndUpdate({ element: root, newTree, prevTree, isRoot: true });
+  prevTree = newTree;
 }
 
-function createNode(node: ComponentTree | string) {
+function diffAndUpdate(props: {
+  element: HTMLElement;
+  newTree: ComponentTree;
+  prevTree: ComponentTree | null;
+  isRoot?: boolean;
+}) {
+  const { element, newTree, prevTree, isRoot } = props;
+
+  if (!isTreeEqualShallow(newTree, prevTree)) {
+    const node = createNode(newTree, isRoot);
+    element.replaceWith(node);
+    return;
+  }
+
+  if (!element?.children?.length) {
+    return;
+  }
+
+  const children = Array.from(element.children);
+
+  for (let i = 0; i < children.length; i++) {
+    const oldChildTree = prevTree?.children?.[i];
+    const newChildTree = newTree?.children?.[i];
+
+    const childElement = children[i] as HTMLElement;
+    if (!newChildTree) {
+      throw new Error(
+        "No child tree found. Deleting components is not yet supported."
+      );
+    }
+
+    diffAndUpdate({
+      element: childElement,
+      newTree: newChildTree,
+      prevTree: oldChildTree ?? null,
+    });
+  }
+}
+
+function createNode(node: ComponentTree | string, isRoot?: boolean) {
   if (typeof node === "string") {
     return document.createTextNode(node);
   }
   const element = document.createElement(node.type);
+  if (isRoot) {
+    element.id = "root";
+  }
   for (const child of node?.children ?? []) {
     element.appendChild(createNode(child));
   }
@@ -25,7 +68,13 @@ function createNode(node: ComponentTree | string) {
     element.setAttribute("style", node.style);
   }
 
-  element.onclick = node.onClick;
+  if (node.text) {
+    element.textContent = node.text;
+  }
+
+  if (node.onClick) {
+    element.onclick = node.onClick;
+  }
 
   return element;
 }
