@@ -13,7 +13,7 @@ It's a good bit
 Fair question
 
 ## TODO
-- [ ] Basic "virtual dom", diffing, reconciliation
+- [x] Basic "virtual dom", diffing, reconciliation
 - [x] useState
 - [x] useCallback
 - [ ] useRef
