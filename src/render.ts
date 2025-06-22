@@ -76,5 +76,13 @@ function createNode(node: ComponentTree | string, isRoot?: boolean) {
     element.onclick = node.onClick;
   }
 
+  if (node.onChange) {
+    element.oninput = node.onChange;
+  }
+
+  if (node.type === "input" && node.text) {
+    element.setAttribute("value", node.text);
+  }
+
   return element;
 }

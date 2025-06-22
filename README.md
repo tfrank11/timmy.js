@@ -19,3 +19,5 @@ Fair question
 - [ ] useRef
 - [ ] useEffect
 - [ ] Adding / removing components
+- [ ] More efficient list rendering using keys
+- [ ] More efficient element reconciliation (ie dont remake entire component if just the text changed)

@@ -16,6 +16,7 @@ export function isTreeEqualShallow(
     a.text === b.text,
     isEqual(a.style, b.style),
     a.onClick === b.onClick,
+    a.onChange === b.onClick,
     a.children?.length === b.children?.length,
   ];
 
