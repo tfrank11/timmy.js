@@ -1,3 +1,3 @@
-import TodoList from "./src/apps/todo-list";
+import Counter from "./src/apps/counter";
 
-export default TodoList;
+export default Counter;
