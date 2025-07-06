@@ -23,7 +23,7 @@ export function isTreeEqualShallow(
   return !conditions.includes(false);
 }
 
-export function isEqual(a: any, b: any): boolean {
+export function isEqual<T>(a: T, b: T): boolean {
   if (typeof a === "object" && typeof b === "object") {
     if (!a && !b) {
       return true;

@@ -3,7 +3,7 @@ import { ICallbackArgs } from "./types";
 
 export const hookIndexRef = { value: 0 };
 
-const stateStore: any[] = [];
+const stateStore: unknown[] = [];
 
 export const useState = <T>(defaultVal: T): [T, (newVal: T) => void] => {
   const index = hookIndexRef.value;
@@ -18,7 +18,7 @@ export const useState = <T>(defaultVal: T): [T, (newVal: T) => void] => {
     rerender();
   }
 
-  return [stateStore[index], setVal];
+  return [stateStore[index] as T, setVal];
 };
 
 const callbackStore: ICallbackArgs[] = [];
