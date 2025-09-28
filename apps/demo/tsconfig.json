@@ -6,7 +6,6 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "isolatedModules": true,
-    "noEmit": true,
     "strict": true,
     "outDir": "dist"
   },
