@@ -10,9 +10,8 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "pnpm build:core && pnpm build:apps",
-    "build:apps": "pnpm -r --filter ./apps/* run build",
-    "build:core": "pnpm -r --filter ./packages/* run build",
+    "lint": "pnpm --color -r lint",
+    "build": "pnpm --color -r build",
     "dev": "pnpm -r --filter ./packages/timmy-js --filter ./apps/demo run dev"
   },
   "keywords": [],
