@@ -1,5 +1,4 @@
-import { useCallback, useState } from "../hooks";
-import { ComponentTree } from "../types";
+import { useCallback, useState, ComponentTree } from "@timmy-js/core";
 
 const TodoList = (): ComponentTree => {
   const [todos, setTodos] = useState<string[]>(["make todo list"]);

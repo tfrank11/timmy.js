@@ -1,4 +1,4 @@
-import { rerender } from "..";
+import { rerender } from "./render";
 import { ICallbackArgs } from "./types";
 
 export const hookIndexRef = { value: 0 };

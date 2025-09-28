@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "pnpx eslint",
+    "build": "pnpm lint && rm -rf /dist && pnpm tsc -p ./tsconfig.json && pnpm tsc-alias",
+    "dev": "vite",
+    "start": "vite preview",
+    "build:vite": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@timmy-js/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "concurrently": "catalog:",
+    "eslint": "catalog:",
+    "globals": "catalog:",
+    "tsc-alias": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vite": "catalog:"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

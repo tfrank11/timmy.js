@@ -1,12 +1,18 @@
 {
-  "name": "timmy.js",
+  "name": "@timmy-js/monorepo",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "ts-node index.ts",
-    "lint": "pnpx eslint",
-    "build": "pnpm lint && rm -rf /dist && pnpm tsc -p ./tsconfig.json && pnpm tsc-alias"
+    "build": "pnpm build:core && pnpm build:apps",
+    "build:apps": "pnpm -r --filter ./apps/* run build",
+    "build:core": "pnpm -r --filter ./packages/* run build",
+    "dev": "pnpm -r --filter ./packages/timmy-js --filter ./apps/demo run dev"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +21,7 @@
   "devDependencies": {
     "@eslint/js": "^9.30.1",
     "eslint": "^9.30.1",
-    "globals": "^16.3.0",
-    "tsc-alias": "^1.8.16",
+    "globals": "^16.4.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1"
   }

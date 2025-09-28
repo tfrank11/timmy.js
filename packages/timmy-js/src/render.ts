@@ -1,10 +1,12 @@
 import { hookIndexRef } from "./hooks";
-import { ComponentTree } from "./types";
+import { ComponentTree, TimmyFC } from "./types";
 import { isTreeEqualShallow } from "./utils";
 
 let prevTree: ComponentTree | null = null;
+let curFc: TimmyFC | null = null;
 
-export function render(newTree: ComponentTree) {
+export function renderRoot(fc: TimmyFC) {
+  const newTree = fc();
   const root = document.getElementById("root");
   if (!root) {
     throw new Error("no root element found");
@@ -12,6 +14,16 @@ export function render(newTree: ComponentTree) {
   hookIndexRef.value = 0;
   diffAndUpdate({ element: root, newTree, prevTree, isRoot: true });
   prevTree = newTree;
+  curFc = fc;
+}
+
+export function rerender() {
+  if (!curFc) {
+    throw new Error(
+      "cannot rerender without a functional component. Make sure you called render() first."
+    );
+  }
+  renderRoot(curFc);
 }
 
 function diffAndUpdate(props: {

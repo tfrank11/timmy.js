@@ -1,5 +1,4 @@
-import { useCallback, useState } from "../hooks";
-import { ComponentTree } from "../types";
+import { useCallback, useState, ComponentTree, TimmyFC } from "@timmy-js/core";
 
 interface CounterProps {
   borderColor: string;
@@ -44,7 +43,7 @@ const counter = ({ borderColor }: CounterProps): ComponentTree => {
   };
 };
 
-const CounterApp = (): ComponentTree => {
+const CounterApp: TimmyFC = () => {
   return {
     type: "div",
     style: "display: flex; flex-direction: column;",

@@ -52,10 +52,6 @@ Timmy.js is a declarative frontend framework generally based on React.
 
 Mostly for the bit
 
-### Why is there application code in this repo?
-
-Fair question
-
 ## TODO
 - [x] Basic "virtual dom", diffing, reconciliation
 - [x] useState
