@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "lint": "pnpx eslint",
-    "build": "pnpm lint && rm -rf /dist && pnpm tsc -p ./tsconfig.json && pnpm tsc-alias",
+    "build": "pnpm lint && rm -rf /dist && pnpm tsc -p ./tsconfig.json",
     "dev": "vite",
     "start": "vite preview",
     "build:vite": "vite build",
@@ -20,7 +20,6 @@
     "concurrently": "catalog:",
     "eslint": "catalog:",
     "globals": "catalog:",
-    "tsc-alias": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:",
     "vite": "catalog:"

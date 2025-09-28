@@ -10,10 +10,6 @@
     "resolveJsonModule": true,
     "lib": ["ESNext", "DOM"]
   },
-  "tsc-alias": {
-    "resolveFullPaths": true,
-    "verbose": false
-  },
   "include": ["./**/*.ts", "./**/*.tsx"],
   "exclude": ["node_modules/**/*", "./dist/**/*"]
 }

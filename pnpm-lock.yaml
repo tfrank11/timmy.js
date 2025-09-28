@@ -69,9 +69,6 @@ importers:
       globals:
         specifier: 'catalog:'
         version: 16.4.0
-      tsc-alias:
-        specifier: 'catalog:'
-        version: 1.8.16
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
