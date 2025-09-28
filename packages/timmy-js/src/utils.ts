@@ -51,7 +51,8 @@ export function isEqual<T>(a: T, b: T): boolean {
       return false;
     }
     for (const [k, v] of aEntries) {
-      if (!isEqual(v, b[k])) {
+      const bVal = b[k as keyof T];
+      if (!isEqual(v, bVal)) {
         return false;
       }
     }

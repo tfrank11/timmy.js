@@ -5,6 +5,7 @@ const TodoList = (): ComponentTree => {
 
   const [textInput, setTextInput] = useState("");
 
+  // @ts-expect-error todo
   const onChangeTextInput = useCallback((event: Event) => {
     const text = (event.currentTarget as { value?: string })?.value;
     setTextInput(text ?? "");

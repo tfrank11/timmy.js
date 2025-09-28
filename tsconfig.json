@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": true,
+    "noEmit": true,
     "sourceMap": true,
     "outDir": "dist",
     "strictNullChecks": true,

@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "node",
-    "declaration": true,
-    "sourceMap": true,
+    "lib": ["ESNext", "DOM", "DOM.iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
     "outDir": "dist",
-    "strictNullChecks": true,
-    "lib": ["ESNext", "DOM"]
+    "declaration": true,
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "strict": true
   },
   "tsc-alias": {
     "resolveFullPaths": true,
