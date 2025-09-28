@@ -3,9 +3,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "bundler",
-    "declaration": true,
     "noEmit": true,
-    "sourceMap": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "lib": ["ESNext", "DOM"]
