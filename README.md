@@ -32,7 +32,7 @@ Timmy.js is a declarative frontend framework generally based on React.
 - Instead of painting the whole DOM each time, it will only update components whose state changed.
 
 #### Hooks
-- `useState`: persist state between renders
+- `useState`: persist state between renders and rerender upon changing state
     ```typescript
     const [count, setCount] = useState(1);
     ```
