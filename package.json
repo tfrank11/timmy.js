@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "pnpm --color -r lint",
     "build": "pnpm --color -r build",
-    "dev": "pnpm -r --filter ./packages/timmy-js --filter ./apps/demo run dev"
+    "dev": "pnpm -r --filter ./packages/* --filter ./apps/* run dev"
   },
   "keywords": [],
   "author": "",
