@@ -1,4 +1,4 @@
-import { ComponentTree } from "./types";
+import { ComponentTree } from "./types.js";
 
 export function isTreeEqualShallow(
   a: ComponentTree | null,

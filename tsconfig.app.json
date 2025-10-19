@@ -1,9 +1,15 @@
 {
-  "extends": "../../tsconfig.app.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": false,
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.iterable"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "sourceMap": true,
-    "outDir": "dist"
+    "noEmit": false
   },
   "include": [
     "src/**/*.tsx",
@@ -13,8 +19,4 @@
     "vite.config.ts",
     "eslint.config.mts"
   ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
 }

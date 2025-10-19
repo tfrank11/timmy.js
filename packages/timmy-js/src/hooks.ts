@@ -1,5 +1,5 @@
-import { rerender } from "./render";
-import { ICallbackArgs } from "./types";
+import { rerender } from "./render.js";
+import { ICallbackArgs } from "./types.js";
 
 export const hookIndexRef = { value: 0 };
 

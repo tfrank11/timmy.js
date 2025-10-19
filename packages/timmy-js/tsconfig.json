@@ -1,19 +1,23 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "outDir": "dist",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.iterable"
+    ],
     "declaration": true,
-    "moduleResolution": "bundler",
-    "isolatedModules": true,
-    "strict": true
+    "noEmit": false,
+    "outDir": "dist"
   },
-  "tsc-alias": {
-    "resolveFullPaths": true,
-    "verbose": false
-  },
-  "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules/**/*", "./dist/**/*"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "vite.config.ts",
+    "eslint.config.mts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

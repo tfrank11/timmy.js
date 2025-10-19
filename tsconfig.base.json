@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "noEmit": true,
+        "skipLibCheck": true,
+        "noImplicitAny": true,
+        "allowJs": true,
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "noUncheckedSideEffectImports": true,
+        "isolatedModules": true
+    }
+}

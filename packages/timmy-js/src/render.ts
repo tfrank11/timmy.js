@@ -1,6 +1,6 @@
-import { hookIndexRef } from "./hooks";
-import { ComponentTree, TimmyFC } from "./types";
-import { isTreeEqualShallow } from "./utils";
+import { hookIndexRef } from "./hooks.js";
+import { ComponentTree, TimmyFC } from "./types.js";
+import { isTreeEqualShallow } from "./utils.js";
 
 let prevTree: ComponentTree | null = null;
 let curFc: TimmyFC | null = null;

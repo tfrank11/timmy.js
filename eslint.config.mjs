@@ -15,4 +15,5 @@ export default defineConfig([
   },
   tseslint.configs.recommended,
   globalIgnores(["**/*.d.ts"]),
+  { ignores: ["dist/"] },
 ]);
