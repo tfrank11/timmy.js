@@ -25,7 +25,7 @@ const callbackStore: ICallbackArgs[] = [];
 
 export const useCallback = (
   fn: ICallbackArgs["fn"],
-  deps?: ICallbackArgs["deps"]
+  deps?: ICallbackArgs["deps"],
 ) => {
   const cur = { fn, deps };
   const index = hookIndexRef.value;

@@ -20,7 +20,7 @@ export function renderRoot(fc: TimmyFC) {
 export function rerender() {
   if (!curFc) {
     throw new Error(
-      "cannot rerender without a functional component. Make sure you called render() first."
+      "cannot rerender without a functional component. Make sure you called render() first.",
     );
   }
   renderRoot(curFc);
@@ -53,7 +53,7 @@ function diffAndUpdate(props: {
     const childElement = children[i] as HTMLElement;
     if (!newChildTree) {
       throw new Error(
-        "No child tree found. Deleting components is not yet supported."
+        "No child tree found. Deleting components is not yet supported.",
       );
     }
 

@@ -2,7 +2,7 @@ import { ComponentTree } from "./types.js";
 
 export function isTreeEqualShallow(
   a: ComponentTree | null,
-  b: ComponentTree | null
+  b: ComponentTree | null,
 ): boolean {
   if (!a && !b) {
     return true;
