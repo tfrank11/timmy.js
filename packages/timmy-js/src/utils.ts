@@ -2,7 +2,7 @@ import { ComponentTree } from "./types.js";
 
 export function isTreeEqualShallow(
   a: ComponentTree | null,
-  b: ComponentTree | null,
+  b: ComponentTree | null
 ): boolean {
   if (!a && !b) {
     return true;
@@ -23,7 +23,7 @@ export function isTreeEqualShallow(
   return !conditions.includes(false);
 }
 
-export function isEqual<T>(a: T, b: T): boolean {
+function isEqual<T>(a: T, b: T): boolean {
   if (typeof a === "object" && typeof b === "object") {
     if (!a && !b) {
       return true;

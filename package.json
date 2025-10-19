@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
   "workspaces": [
     "packages/*",
     "apps/*"
@@ -13,7 +12,8 @@
     "lint": "pnpm manypkg check && pnpm --color -r lint",
     "build": "pnpm --color -r build",
     "dev": "pnpm -r --filter ./packages/* --filter ./apps/* run dev",
-    "format": "prettier --write {packages,apps}/*/src/**/*.ts"
+    "format": "prettier --write {packages,apps}/*/src/**/*.ts",
+    "knip": "knip --config ./knip.json"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "@manypkg/cli": "^0.25.1",
     "eslint": "^9.30.1",
     "globals": "^16.4.0",
+    "knip": "^5.66.1",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1"

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/knip@5.66.1/schema.json",
+  "workspaces": {
+    "apps/*": {
+      "entry": ["src/index.ts"]
+    }
+  },
+  "ignore": ["apps/demo/src/components/todo-list.ts"],
+  "ignoreDependencies": []
+}

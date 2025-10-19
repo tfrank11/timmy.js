@@ -2,7 +2,6 @@
   "name": "@timmy-js/demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "lint": "pnpx eslint",
@@ -17,7 +16,6 @@
   },
   "devDependencies": {
     "@eslint/js": "catalog:",
-    "concurrently": "catalog:",
     "eslint": "catalog:",
     "globals": "catalog:",
     "typescript": "catalog:",
