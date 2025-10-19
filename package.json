@@ -10,10 +10,9 @@
     "apps/*"
   ],
   "scripts": {
-    "lint": "pnpm --color -r lint",
-    "build": "pnpm check && pnpm --color -r build",
-    "dev": "pnpm -r --filter ./packages/* --filter ./apps/* run dev",
-    "check": "pnpm manypkg check"
+    "lint": "pnpm manypkg check && pnpm --color -r lint",
+    "build": "pnpm lint && pnpm --color -r build",
+    "dev": "pnpm -r --filter ./packages/* --filter ./apps/* run dev"
   },
   "keywords": [],
   "author": "",
