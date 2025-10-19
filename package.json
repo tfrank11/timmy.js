@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "lint": "pnpm --color -r lint",
-    "build": "pnpm --color -r build",
+    "build": "pnpm check && pnpm --color -r build",
     "dev": "pnpm -r --filter ./packages/* --filter ./apps/* run dev",
     "check": "pnpm manypkg check"
   },
