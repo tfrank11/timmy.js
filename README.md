@@ -61,6 +61,10 @@ $ pnpm dev
 
 Mostly for the bit
 
+### Monorepo setup seems a little overkill, no?
+
+Yes
+
 ## TODO
 - [x] Basic "virtual dom", diffing, reconciliation
 - [x] useState
