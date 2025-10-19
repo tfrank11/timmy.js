@@ -1,22 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.iterable"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "sourceMap": true,
     "noEmit": false
-  },
-  "include": [
-    "src/**/*.tsx",
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "vite.config.ts",
-    "eslint.config.mts"
-  ],
+  }
 }
