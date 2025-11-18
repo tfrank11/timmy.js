@@ -2,14 +2,6 @@
 
 Timmy.js is a declarative frontend framework generally based on React.
 
-## 🤔 How to run the demo app
-
-```console
-$ pnpm i
-$ pnpm build
-$ pnpm dev
-```
-
 
 ## 🚀 Features
 
@@ -53,6 +45,14 @@ $ pnpm dev
     }, [textInput]);
     ```
 
+
+## 🤔 How to run the demo app
+
+```console
+$ pnpm i
+$ pnpm build
+$ pnpm dev
+```
 
 
 ## 📝 FAQ
