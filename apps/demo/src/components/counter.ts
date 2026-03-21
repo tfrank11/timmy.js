@@ -49,8 +49,8 @@ const CounterApp: TimmyFC = () => {
     style: "display: flex; flex-direction: column;",
     children: [
       {
-        type: "h1",
-        text: "Yo yo yo check out these buttons",
+        type: "h2",
+        text: "Button Counter Demo",
       },
       counter({ borderColor: "red" }),
       counter({ borderColor: "green" }),
