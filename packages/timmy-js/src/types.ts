@@ -13,7 +13,9 @@ export type ComponentTree = {
   onChange?: (evt: Event) => void;
 };
 
-export type ICallbackArgs = {
-  fn: (v: unknown) => unknown;
-  deps?: unknown[];
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyFn = (...args: any[]) => any;
+
+export type UseCallback = <T extends AnyFn>(fn: T, deps?: unknown[]) => T;
+
+export type IUseCallbackArgs = Parameters<UseCallback>;

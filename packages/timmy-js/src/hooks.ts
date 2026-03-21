@@ -1,5 +1,5 @@
 import { rerender } from "./render.js";
-import { ICallbackArgs } from "./types.js";
+import { IUseCallbackArgs, UseCallback } from "./types.js";
 
 export const hookIndexRef = { value: 0 };
 
@@ -21,13 +21,10 @@ export const useState = <T>(defaultVal: T): [T, (newVal: T) => void] => {
   return [stateStore[index] as T, setVal];
 };
 
-const callbackStore: ICallbackArgs[] = [];
+const callbackStore: IUseCallbackArgs[] = [];
 
-export const useCallback = (
-  fn: ICallbackArgs["fn"],
-  deps?: ICallbackArgs["deps"],
-) => {
-  const cur = { fn, deps };
+export const useCallback: UseCallback = (fn, deps) => {
+  const cur: IUseCallbackArgs = [fn, deps];
   const index = hookIndexRef.value;
   hookIndexRef.value++;
 
@@ -35,27 +32,29 @@ export const useCallback = (
     callbackStore[index] = cur;
   }
   const prev = callbackStore[index];
+  const prevFn = prev[0];
+  const prevDeps = prev[1];
 
   // No deps array -> change fn reference on every render
-  if (!cur.deps) {
-    return cur.fn;
+  if (!deps) {
+    return fn;
   }
 
   // Invalid state
-  if (cur.deps.length !== prev.deps?.length) {
+  if (deps.length !== prevDeps?.length) {
     throw new Error("Dependency array length cannot change between renders");
   }
 
   // Check for deps array change
-  for (let i = 0; i < cur.deps.length; i++) {
-    const newDep = cur.deps[i];
-    const oldDep = callbackStore[index].deps?.[i];
+  for (let i = 0; i < deps.length; i++) {
+    const newDep = deps[i];
+    const oldDep = prevDeps?.[i];
     if (!Object.is(newDep, oldDep)) {
       callbackStore[index] = cur;
-      return cur.fn;
+      return fn;
     }
   }
 
   // No deps change -> return previous fn reference
-  return prev.fn;
+  return prevFn;
 };
