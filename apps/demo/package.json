@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "pnpx eslint",
-    "build": "pnpm lint && rm -rf /dist && pnpm tsc -p ./tsconfig.json",
+    "build": "pnpm lint && rm -rf ./dist && pnpm tsc -p ./tsconfig.json",
     "dev": "vite",
     "start": "vite preview",
     "build:vite": "vite build",
