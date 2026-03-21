@@ -16,6 +16,11 @@ export type ComponentTree = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyFn = (...args: any[]) => any;
 
-export type UseCallback = <T extends AnyFn>(fn: T, deps?: unknown[]) => T;
+export type UseCallback<T extends AnyFn = () => void> = (
+  fn: T,
+  deps: unknown[],
+) => T;
 
-export type IUseCallbackArgs = Parameters<UseCallback>;
+export type IUseCallbackArgs<T extends AnyFn = () => void> = Parameters<
+  UseCallback<T>
+>;

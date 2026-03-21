@@ -1,4 +1,4 @@
-import { useCallback, useState, ComponentTree, TimmyFC } from "@timmy-js/core";
+import { useCallback, useState, TimmyFC } from "@timmy-js/core";
 
 const TodoList: TimmyFC = () => {
   const [todos, setTodos] = useState<string[]>(["make todo list"]);
