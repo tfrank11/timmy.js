@@ -21,6 +21,8 @@ export type UseCallback<T extends AnyFn = () => void> = (
   deps: unknown[],
 ) => T;
 
-export type IUseCallbackArgs<T extends AnyFn = () => void> = Parameters<
+export type UseCallbackArgs<T extends AnyFn = () => void> = Parameters<
   UseCallback<T>
 >;
+
+export type UseCallbackRtn<T extends AnyFn> = ReturnType<UseCallback<T>>;

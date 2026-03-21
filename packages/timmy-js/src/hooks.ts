@@ -1,5 +1,5 @@
 import { rerender } from "./render.js";
-import { IUseCallbackArgs, UseCallback } from "./types.js";
+import { AnyFn, UseCallbackArgs, UseCallbackRtn } from "./types.js";
 
 export const hookIndexRef = { value: 0 };
 
@@ -21,19 +21,21 @@ export const useState = <T>(defaultVal: T): [T, (newVal: T) => void] => {
   return [stateStore[index] as T, setVal];
 };
 
-const callbackStore: IUseCallbackArgs[] = [];
+const callbackStore: UseCallbackArgs[] = [];
 
-export const useCallback: UseCallback = (fn, deps) => {
-  const cur: IUseCallbackArgs = [fn, deps];
+export const useCallback = <T extends AnyFn>(
+  ...args: UseCallbackArgs<T>
+): UseCallbackRtn<T> => {
+  const [fn, deps] = args;
+  const cur: UseCallbackArgs<T> = [fn, deps];
   const index = hookIndexRef.value;
   hookIndexRef.value++;
 
   if (callbackStore[index] === undefined) {
     callbackStore[index] = cur;
   }
-  const prev = callbackStore[index];
-  const prevFn = prev[0];
-  const prevDeps = prev[1];
+  const prev = callbackStore[index] as UseCallbackArgs<T>;
+  const [prevFn, prevDeps] = prev;
 
   // No deps array -> change fn reference on every render
   if (!deps) {
