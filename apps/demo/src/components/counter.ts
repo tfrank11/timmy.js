@@ -4,7 +4,7 @@ interface CounterProps {
   borderColor: string;
 }
 
-const counter = ({ borderColor }: CounterProps): ComponentTree => {
+const counter: TimmyFC<CounterProps> = ({ borderColor }) => {
   const [count, setCount] = useState(1);
 
   const onClickIncrement = useCallback(() => {
