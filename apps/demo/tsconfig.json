@@ -6,12 +6,10 @@
     "outDir": "dist"
   },
   "include": [
-    "src/**/*.tsx",
     "src/**/*.ts",
     "src/**/*.js",
-    "src/**/*.jsx",
     "vite.config.ts",
-    "eslint.config.mts"
+    "eslint.config.mjs"
   ],
   "exclude": ["node_modules", "dist"]
 }

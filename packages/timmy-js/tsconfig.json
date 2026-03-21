@@ -7,11 +7,6 @@
     "noEmit": false,
     "outDir": "dist"
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "vite.config.ts",
-    "eslint.config.mts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.js"],
   "exclude": ["node_modules", "dist"]
 }
