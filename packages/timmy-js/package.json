@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
-    "lint": "pnpx eslint",
+    "lint": "pnpm eslint",
     "build": "pnpm lint && rm -rf ./dist && pnpm tsc -p ./tsconfig.json"
   },
   "keywords": [],
